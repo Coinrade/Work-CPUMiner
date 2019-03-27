@@ -98,6 +98,7 @@ enum algos {
 	ALGO_DROP,        /* Dropcoin */
 	ALGO_FRESH,       /* Fresh */
 	ALGO_GEEK,
+	ALGO_WORK,	  /* Communist Coin */
 	ALGO_GROESTL,     /* Groestl */
 	ALGO_JHA,
 	ALGO_LBRY,        /* Lbry Sha Ripemd */
@@ -196,6 +197,7 @@ static const char *algo_names[] = {
 	"tribus",
 	"vanilla",
 	"veltor",
+	"work",
 	"x11evo",
 	"x11",
 	"x12",
@@ -361,6 +363,7 @@ Options:\n\
                           s3           S3\n\
                           timetravel   Timetravel (Machinecoin)\n\
                           vanilla      Blake-256 8-rounds\n\
+                          work         SHA2 Blake - Communist best choice\n\
                           x11evo       Permuted x11\n\
                           x11          X11\n\
                           x12          X12\n\
@@ -2217,6 +2220,7 @@ static void *miner_thread(void *userdata)
 			case ALGO_LBRY:
 			case ALGO_SONOA:
 			case ALGO_TRIBUS:
+                        case ALGO_WORK:
 			case ALGO_X15:
 			case ALGO_X16R:
 			case ALGO_X16S:
@@ -2409,6 +2413,9 @@ static void *miner_thread(void *userdata)
 		case ALGO_VELTOR:
 			rc = scanhash_veltor(thr_id, &work, max_nonce, &hashes_done);
 			break;
+                case ALGO_WORK:
+                        rc = scanhash_work(thr_id, &work, max_nonce, &hashes_done);
+                        break;
 		case ALGO_X11EVO:
 			rc = scanhash_x11evo(thr_id, &work, max_nonce, &hashes_done);
 			break;

@@ -294,6 +294,9 @@
     <ClCompile Include="algo\veltor.c">
       <Filter>algo</Filter>
     </ClCompile>
+    <C1Compile Include="algo\work.c">
+      <Filter>algo</Filter>
+    </C1Compile>
     <ClCompile Include="algo\x11evo.c">
       <Filter>algo</Filter>
     </ClCompile>

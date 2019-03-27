@@ -250,6 +250,7 @@ int scanhash_timetravel(int thr_id, struct work *work, uint32_t max_nonce, uint6
 int scanhash_bitcore(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_tribus(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_veltor(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
+int scnahash_work(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_x11evo(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_x11(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
 int scanhash_x12(int thr_id, struct work *work, uint32_t max_nonce, uint64_t *hashes_done);
@@ -547,6 +548,7 @@ void timetravel_hash(void *output, const void *input);
 void bitcore_hash(void *output, const void *input);
 void tribus_hash(void *output, const void *input);
 void veltor_hash(void *output, const void *input);
+void workhash(void *output, const void *input);
 void xevan_hash(void *output, const void *input);
 void x11evo_hash(void *output, const void *input);
 void x11hash(void *output, const void *input);
